@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Quản lý cửa hàng" android:id="@+id/StoreManager">
+            <menu>
+                <item
+                    android:id="@+id/nav_ThongTinQuan"
+                    android:icon="@drawable/ic_store_white_24dp"
+                    android:title="Thông tin cửa hàng" />
+                <item
+                    android:id="@+id/nav_ThongKe"
+                    android:icon="@drawable/ic_assessment_white_24dp"
+                    android:title="Thông kê quán" />
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Quản lý tài khoản" android:id="@+id/AccManager">
+        <menu>
+            <item
+                android:id="@+id/nav_SignIn"
+                android:icon="@drawable/ic_verified_user_white_24dp"
+                android:title="Đăng nhập" />
+            <item
+                android:id="@+id/nav_AccEdit"
+                android:icon="@drawable/ic_receipt_white_24dp"
+                android:title="Chỉnh sửa tài khoản" />
+        </menu>
+    </item>
+
+</menu>

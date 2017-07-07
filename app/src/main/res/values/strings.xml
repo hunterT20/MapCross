@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MapCross</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">1</string>
+    <string name="navigation_drawer_close">2</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

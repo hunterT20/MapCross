@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".FlashScreen">
+        <activity android:name=".view.activity.FlashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,6 +34,7 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

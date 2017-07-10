@@ -2,6 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
+        <item android:title="Địa điểm" android:id="@+id/Map">
+            <menu>
+                <item
+                    android:id="@+id/nav_Map"
+                    android:icon="@drawable/ic_location_on_white_24dp"
+                    android:title="Địa điểm" />
+            </menu>
+        </item>
         <item android:title="Quản lý cửa hàng" android:id="@+id/StoreManager">
             <menu>
                 <item
@@ -19,13 +27,37 @@
     <item android:title="Quản lý tài khoản" android:id="@+id/AccManager">
         <menu>
             <item
-                android:id="@+id/nav_SignIn"
-                android:icon="@drawable/ic_verified_user_white_24dp"
-                android:title="Đăng nhập" />
-            <item
                 android:id="@+id/nav_AccEdit"
                 android:icon="@drawable/ic_receipt_white_24dp"
-                android:title="Chỉnh sửa tài khoản" />
+                android:title="Thông tin tài khoản" />
+        </menu>
+    </item>
+
+    <item android:title="Admin" android:id="@+id/Admin">
+        <menu>
+            <item
+                android:id="@+id/nav_listUser"
+                android:icon="@drawable/ic_people_white_24dp"
+                android:title="Danh sách người dùng" />
+
+            <item
+                android:id="@+id/nav_listStore"
+                android:icon="@drawable/ic_format_list_bulleted_white_24dp"
+                android:title="Danh sách cửa hàng" />
+        </menu>
+    </item>
+
+    <item android:title="Hệ Thống" android:id="@+id/System">
+        <menu>
+            <item
+                android:id="@+id/nav_About"
+                android:icon="@drawable/ic_info_outline_white_24dp"
+                android:title="Thông tin ứng dụng" />
+
+            <item
+                android:id="@+id/nav_Logout"
+                android:icon="@drawable/ic_exit_to_app_white_24dp"
+                android:title="Đăng xuất" />
         </menu>
     </item>
 

@@ -1,10 +1,10 @@
-package vn.aqtsoft.mapcross;
+package vn.aqtsoft.mapcross.view.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import vn.aqtsoft.mapcross.view.activity.MainActivity;
+import vn.aqtsoft.mapcross.R;
 
 public class FlashScreen extends AppCompatActivity {
 
@@ -18,7 +18,7 @@ public class FlashScreen extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                    Intent intent = new Intent(FlashScreen.this, MainActivity.class);
+                    Intent intent = new Intent(FlashScreen.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (InterruptedException e) {

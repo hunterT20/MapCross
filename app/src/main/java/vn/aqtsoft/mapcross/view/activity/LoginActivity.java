@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.SignUp)      ConstraintLayout SignUp;
     @BindView(R.id.edtUserNameL)    EditText edtUserNameL;
     @BindView(R.id.edtPassL)        EditText edtPassL;
-    /*Nếu step = 0: Stack
+    /*Nếu
     * step = 1: SignIn
     * step = 2: SignUp*/
     int step = 0;
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.btnNoAcc)
+    /*@OnClick(R.id.btnNoAcc)
     public void NoAccClick(){
         SharePreferenceUtil.setPermission(this,"-1");
         Intent intent = new Intent(LoginActivity.this,MainActivity.class);
@@ -46,6 +46,13 @@ public class LoginActivity extends AppCompatActivity {
     public void HaveAccClick(){
         step = 1;
         Stack.setVisibility(View.GONE);
+        SignIn.setVisibility(View.VISIBLE);
+    }*/
+
+    @OnClick(R.id.btnSigUp)
+    public void SignUpClick(){
+        step = 1;
+        SignUp.setVisibility(View.GONE);
         SignIn.setVisibility(View.VISIBLE);
     }
 
@@ -108,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         switch (step){
-            case 0:
+            case 1:
                 SweetDialogUtil.onWarning(this, "Bạn muốn thoát ứng dụng?", new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {
@@ -122,11 +129,11 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
                 break;
-            case 1:
+            /*case 1:
                 step = 0;
                 SignIn.setVisibility(View.GONE);
                 Stack.setVisibility(View.VISIBLE);
-                break;
+                break;*/
             case 2:
                 step = 1;
                 SignUp.setVisibility(View.GONE);

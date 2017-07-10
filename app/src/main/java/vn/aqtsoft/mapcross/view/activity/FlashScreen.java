@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import vn.aqtsoft.mapcross.R;
+import vn.aqtsoft.mapcross.util.SharePreferenceUtil;
 
 public class FlashScreen extends AppCompatActivity {
 
@@ -18,7 +19,8 @@ public class FlashScreen extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                    Intent intent = new Intent(FlashScreen.this, LoginActivity.class);
+                    SharePreferenceUtil.setPermission(getApplication(),"-1");
+                    Intent intent = new Intent(FlashScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } catch (InterruptedException e) {

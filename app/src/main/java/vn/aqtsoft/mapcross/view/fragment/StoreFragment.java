@@ -11,14 +11,15 @@ import android.view.ViewGroup;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import vn.aqtsoft.mapcross.R;
+import vn.aqtsoft.mapcross.util.SweetDialogUtil;
+import vn.aqtsoft.mapcross.view.activity.MainActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class StoreFragment extends Fragment {
-    @BindView(R.id.NoStore)
-    ConstraintLayout NoStore;
     @BindView(R.id.Create)
     ConstraintLayout Create;
 
@@ -36,10 +37,15 @@ public class StoreFragment extends Fragment {
         return view;
     }
 
-    @OnClick(R.id.btnCreate)
-    public void CreateStore(){
-        NoStore.setVisibility(View.GONE);
-        Create.setVisibility(View.VISIBLE);
+    @OnClick(R.id.btnSave)
+    public void SaveClick(){
+        SweetDialogUtil.onSuccess(getActivity(), "Lưu thông tin thành công!", new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sweetAlertDialog) {
+                sweetAlertDialog.dismiss();
+                if (getActivity() == null) return;
+                ((MainActivity)getActivity()).callFragment(new MapFragment(),"Địa điểm");
+            }
+        });
     }
-
 }

@@ -56,16 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         SignIn.setVisibility(View.VISIBLE);
     }
 
-    @OnClick(R.id.btnLoginFace)
-    public void LoginFaceClick(){
-        Toast.makeText(this, "Face login coming soon...", Toast.LENGTH_SHORT).show();
-    }
-
-    @OnClick(R.id.btnLoginGmail)
-    public void LoginGmailClick(){
-        Toast.makeText(this, "Gmail login coming soon...", Toast.LENGTH_SHORT).show();
-    }
-
     @OnClick(R.id.txtvSignUp)
     public void DangKiClick(){
         step = 2;

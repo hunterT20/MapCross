@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case "0":
                 menu.findItem(R.id.StoreManager).setVisible(false);
                 menu.findItem(R.id.AccManager).setVisible(false);
+                SharePreferenceUtil.setDetail(this,"1");
+                callFragment(new ListFragment(),"Danh sách quán");
                 break;
             case "1":
                 menu.findItem(R.id.Admin).setVisible(false);
@@ -95,7 +97,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
             finish();
         }else if (id == R.id.nav_listUser){
+            SharePreferenceUtil.setDetail(this,"0");
             callFragment(new ListFragment(),"Quản lý user");
+        }else if (id == R.id.nav_listStore){
+            SharePreferenceUtil.setDetail(this,"1");
+            callFragment(new ListFragment(),"Quản lý cửa hàng");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

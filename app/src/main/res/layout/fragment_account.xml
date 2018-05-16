@@ -93,10 +93,10 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtvUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/txtvStoreName" />
 
     <TextView
-        android:id="@+id/txtvUserName"
+        android:id="@+id/txtvStoreName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"

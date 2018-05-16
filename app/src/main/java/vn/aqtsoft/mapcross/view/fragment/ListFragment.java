@@ -1,6 +1,8 @@
 package vn.aqtsoft.mapcross.view.fragment;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +16,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import vn.aqtsoft.mapcross.R;
+import vn.aqtsoft.mapcross.model.Store;
 import vn.aqtsoft.mapcross.model.User;
 import vn.aqtsoft.mapcross.util.RecyclerViewUtil;
+import vn.aqtsoft.mapcross.util.SharePreferenceUtil;
+import vn.aqtsoft.mapcross.view.adapter.StoreAdapter;
 import vn.aqtsoft.mapcross.view.adapter.UserAdapter;
 
 /**
@@ -26,6 +31,7 @@ public class ListFragment extends Fragment {
     RecyclerView rcvList;
 
     private List<User> userList;
+    private List<Store> storeList;
 
     public ListFragment() {
         // Required empty public constructor
@@ -40,6 +46,7 @@ public class ListFragment extends Fragment {
         ButterKnife.bind(this,view);
 
         userList = new ArrayList<>();
+        storeList = new ArrayList<>();
         if (getActivity() == null) return view;
         RecyclerViewUtil.setupRecyclerView(rcvList,new UserAdapter(getActivity(),userList),getActivity());
         initData();
@@ -48,17 +55,31 @@ public class ListFragment extends Fragment {
     }
 
     private void initData() {
-        User user1 = new User("thanhtuan","123","10/07/2017");
-        User user2 = new User("trongquyen","123","10/07/2017");
+        if (SharePreferenceUtil.getDetail(getActivity()).equals("0")){
+            User user1 = new User("thanhtuan","123","10/07/2017");
+            User user2 = new User("trongquyen","123","10/07/2017");
 
-        userList.add(user1);
-        userList.add(user2);
+            userList.add(user1);
+            userList.add(user2);
 
-        addControls();
+            setListUser();
+        }else {
+            Bitmap bitmap = BitmapFactory.decodeResource(getActivity().getResources(),
+                    R.mipmap.icon);
+            Store store1 = new Store("HTGame","01669384803","180 Cao Lo","Gioi thieu demo",bitmap,"thanhtuan.2295@outlook.com");
+            storeList.add(store1);
+
+            setListStore();
+        }
     }
 
-    private void addControls() {
+    private void setListUser() {
         UserAdapter adapter = new UserAdapter(getActivity(),userList);
+        rcvList.setAdapter(adapter);
+    }
+
+    private void setListStore() {
+        StoreAdapter adapter = new StoreAdapter(storeList,getActivity());
         rcvList.setAdapter(adapter);
     }
 }

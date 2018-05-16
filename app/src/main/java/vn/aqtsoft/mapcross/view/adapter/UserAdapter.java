@@ -12,8 +12,8 @@ import java.util.List;
 
 import vn.aqtsoft.mapcross.R;
 import vn.aqtsoft.mapcross.model.User;
+import vn.aqtsoft.mapcross.util.SharePreferenceUtil;
 import vn.aqtsoft.mapcross.view.activity.DetailActivity;
-import vn.aqtsoft.mapcross.view.activity.MainActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private List<User> userList;
@@ -40,6 +40,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharePreferenceUtil.setUser(context,user);
                 Intent intent = new Intent(context, DetailActivity.class);
                 context.startActivity(intent);
             }
@@ -55,7 +56,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         private TextView txtvUserName;
         UserViewHolder(View itemView) {
             super(itemView);
-            txtvUserName = itemView.findViewById(R.id.txtvUserName);
+            txtvUserName = itemView.findViewById(R.id.txtvStoreName);
         }
     }
 }
